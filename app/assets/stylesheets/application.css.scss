@@ -17,9 +17,9 @@
 
 @font-face {
   font-family: 'Dosis';
-  src: url('dosis-regular-webfony.woff') format('woff'),
-       url('dosis-regular-webfony.woff2') format('woff'),
-       url('Dosis-Regular.ttf') format('truetype')
+  src: font-url('dosis-regular-webfont.woff') format('woff'),
+       font-url('dosis-regular-webfont.woff2') format('woff'),
+       font-url('Dosis-Regular.ttf') format('truetype')
 }
 
 .top-bar {
@@ -66,6 +66,42 @@
   margin: 0;
   background-color: white;
   font-family: 'Dosis', sans-serif;
+  text-align: center;
+
+  li, .dropdown-menu {
+    border: none;
+    width: 130px;
+    &.list-item {
+
+      a {
+        padding: 10px 0;
+        text-align: center;
+        color: white;
+        &:hover {
+          background: #819c1a;
+        }
+
+        &.dropdown-toggle {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  #our-mission {
+    padding: 15px 0;
+  }
+
+  ul.dropdown-menu {
+    min-width: 130px !important;
+    background: #a1b82f;
+  }
+  .nav-top {
+    &:hover {
+      color: #f58327;
+      background-color: white;
+    }
+  }
 }
 
 
