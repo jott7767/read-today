@@ -1,0 +1,47 @@
+%nav.navbar
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{ "aria-expanded" => "false",
+        "data-target" => "#read-today-navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    #read-today-navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{href: "#"}
+            OUR MISSION
+        %li
+          %a.dropdown-toggle{href: '#', 'data-toggle' => "dropdown", :role => "button",
+                             'aria-haspopup' => "true", 'aria-expanded' => "false"}
+            PROGRAMS
+            %ul.dropdown-menu
+              %li
+                %a{href: "#"} SUMMER READING
+              %li
+                %a{href: "#"} PIZZA PLEDGE
+              %li
+                %a{href: "#"} VOLUNTEER
+        %li
+          %a.dropdown-toggle{href: '#', 'data-toggle' => "dropdown", :role => "button",
+                             'aria-haspopup' => "true", 'aria-expanded' => "false"}
+            RESOURCES
+            %ul.dropdown-menu
+              %li
+                %a{href: "#"} 123 CONNECT
+              %li
+                %a{href: "#"} FAQs
+        %li
+          %a.dropdown-toggle{href: '#', 'data-toggle' => "dropdown", :role => "button",
+                             'aria-haspopup' => "true", 'aria-expanded' => "false"}
+            MEDIA
+            %ul.dropdown-menu
+              %li
+                %a{href: "#"} 123 CONNECT
+              %li
+                %a{href: "#"} FAQs
+        %li
+          %a.dropdown-toggle{href: '#', 'data-toggle' => "dropdown", :role => "button",
+                             'aria-haspopup' => "true", 'aria-expanded' => "false"}
+            CONTACT

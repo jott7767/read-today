@@ -15,10 +15,84 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@font-face {
+  font-family: 'Dosis';
+  src: url('dosis-regular-webfony.woff') format('woff'),
+       url('dosis-regular-webfony.woff2') format('woff'),
+       url('Dosis-Regular.ttf') format('truetype')
+}
+
 .top-bar {
   height: 80px;
   width: 100%;
   background: image-url("header.jpg");
-  // background-size: cover;
-  // background-position: center;
+  position: absolute;
+  z-index: -1;
+}
+
+.wrapper{
+  height: 100%;
+  .page-container {
+    min-width: 70%;
+    clear: both;
+  }
+}
+
+#logo {
+  width: 397px;
+  height: 168px;
+  margin: 0 3%;
+  // float: left;
+  position: static;
+  background: image-url("read_today_logo.png");
+  // z-index: 20;
+}
+
+.logo {
+  float: left;
+}
+
+.blacky {
+  height: 60px;
+  margin: 80px 50px 0 0;
+  // width: 50%;
+  float: right;
+  font-size: 20px;
+  min-width: 706px;
+}
+
+.navbar {
+  height: 60px;
+  margin: 0;
+  background-color: white;
+  font-family: 'Dosis', sans-serif;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1183px) {
+  .blacky {
+    margin-top: 0;
+    // float: left;
+    width: 100%;
+    margin: auto;
+    .navbar-right {
+      width: 100%;
+      margin: auto;
+      float: left;
+    }
+  }
+  .navbar-toggle {
+    float: left;
+  }
+  .logo {
+    width: 100%;
+    display: block;
+    #logo {
+      margin: auto;
+    }
+  }
 }
