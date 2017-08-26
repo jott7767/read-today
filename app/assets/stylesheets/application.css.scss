@@ -11,5 +11,14 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.top-bar {
+  height: 80px;
+  width: 100%;
+  background: image-url("header.jpg");
+  // background-size: cover;
+  // background-position: center;
+}
