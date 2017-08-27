@@ -88,6 +88,12 @@
     }
   }
 
+  #read-today-navbar {
+    .main-nav {
+
+    }
+  }
+
   #our-mission {
     padding: 15px 0;
   }
@@ -109,20 +115,17 @@
 
 
 
-@media only screen and (max-width: 1183px) {
+@media only screen and (max-width: 1182px) {
   .blacky {
     margin-top: 0;
     // float: left;
     width: 100%;
     margin: auto;
-    .navbar-right {
-      width: 100%;
-      margin: auto;
-      float: left;
+
     }
-  }
+
   .navbar-toggle {
-    float: left;
+    background-color: black;
   }
   .logo {
     width: 100%;
@@ -131,4 +134,26 @@
       margin: auto;
     }
   }
+
+  #read-today-navbar {
+    min-width: 130px !important;
+    float: right;
+    padding: 0;
+
+  }
+
+  .navbar-right {
+    width: 100%;
+    .list-item {
+      a {
+        padding-left: 15px !important;
+      }
+    }
+    .dropdown-menu {
+      background: #a1b82f !important;
+    }
+
+  }
+
+
 }
