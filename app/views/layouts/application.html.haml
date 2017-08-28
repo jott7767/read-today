@@ -10,12 +10,11 @@
   %body
     .wrapper
       .top-bar
-      .container-fluid.logo
+      .container-fluid.logo.col-md-4.col-xs-4
         #logo
-      .container-fluid.blacky.col-md-6.col-xs-8
-        = render partial: 'layouts/nav_bar'
+      = render partial: 'layouts/nav_bar'
 
-
-        -# .container
       .container.page-container
         = yield
+    
+    = render partial: 'layouts/footer'
