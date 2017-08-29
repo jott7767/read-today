@@ -1,9 +1,9 @@
 .container-fluid.page-bottom.col-md-12.col-sx-12
   .footer-links-container.col-md-6.col-xs-10
     %p.footer-links
-      %a{ href: '#'} Terms of Use
+      = link_to 'Terms of Use', pages_index_path(page: 'terms_of_use')
       |
-      %a{ href: '#'} DMCA Notice
+      = link_to 'DMCA Notice', pages_index_path(page: 'dmca_notice')
       |
-      %a{ href: '#' } Privacy Statement
+      = link_to 'Privacy Statement', pages_index_path(page: 'privacy_statement')
   .footer-ksl-logo.col-md-2.col-xs-6

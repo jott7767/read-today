@@ -14,6 +14,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "home.css.scss";
 
 @font-face {
   font-family: 'Dosis';
@@ -41,7 +42,7 @@
 #logo {
   // min-width: 397px;
   height: 168px;
-  margin: 0 5px 0 5px;
+  margin: 0 5px;
   // float: left;
   position: static;
   background: image-url("read_today_logo.png") no-repeat;
@@ -74,6 +75,7 @@
   li, .dropdown-menu {
     border: none;
     width: 130px;
+
     &.list-item {
 
       a {
@@ -95,15 +97,17 @@
     padding: 15px 0;
   }
 
-  ul.dropdown-menu {
+  ul.dropdown-menu li:hover{
+    visibility: hidden;
     min-width: 130px !important;
     background: #a1b82f;
   }
-  .nav-top {
-    &:hover {
-      color: #f58327;
-      background-color: white;
-    }
+  .nav-top:hover {
+    color: #f58327;
+    background-color: white;
+  }
+  .dropdown:hover {
+    visibility: visible;
   }
 }
 
@@ -137,6 +141,7 @@
 
 
 
+
 @media only screen and (max-width: 1182px) {
   .logo {
     padding: 0;
@@ -151,6 +156,7 @@
 
   .navbar-toggle {
     background-color: black;
+    margin-right: 20px;
   }
   .logo {
     width: 100%;
@@ -167,8 +173,9 @@
   }
 
   .navbar-right {
-    width: 100%;
+    width: 130px;
     margin: 0 15px;
+    background-color: white;
     .list-item {
       a {
         padding-left: 15px !important;

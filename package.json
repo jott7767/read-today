@@ -1,5 +1,7 @@
 {
   "name": "read_today",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }
