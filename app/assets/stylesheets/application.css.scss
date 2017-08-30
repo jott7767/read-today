@@ -58,58 +58,14 @@
 .blacky {
   height: 60px;
   margin: 80px 0 0;
-  // width: 50%;
-  float: right;
-  font-size: 20px;
-  min-width: 727px;
+  // // width: 50%;
+  // float: right;
+  // font-size: 20px;
+  // min-width: 727px;
 }
 
-.navbar {
-  height: 60px;
-  margin: 0;
-  background-color: white;
-  font-family: 'Dosis', sans-serif;
-  text-align: center;
 
 
-  li, .dropdown-menu {
-    border: none;
-    width: 130px;
-
-    &.list-item {
-
-      a {
-        padding: 10px 0;
-        text-align: center;
-        color: white;
-        &:hover {
-          background: #819c1a;
-        }
-
-        &.dropdown-toggle {
-          padding: 0;
-        }
-      }
-    }
-  }
-
-  #our-mission {
-    padding: 15px 0;
-  }
-
-  ul.dropdown-menu li:hover{
-    visibility: hidden;
-    min-width: 130px !important;
-    background: #a1b82f;
-  }
-  .nav-top:hover {
-    color: #f58327;
-    background-color: white;
-  }
-  .dropdown:hover {
-    visibility: visible;
-  }
-}
 
 .page-bottom {
   // height: 60px;
@@ -147,44 +103,8 @@
     padding: 0;
   }
 
-  .blacky {
-    margin-top: 0;
-    // float: left;
-    width: 100%;
-    margin: auto;
-    }
 
-  .navbar-toggle {
-    background-color: black;
-    margin-right: 20px;
-  }
-  .logo {
-    width: 100%;
-    display: block;
-    #logo {
-      margin: auto;
-    }
-  }
 
-  #read-today-navbar {
-    min-width: 130px !important;
-    float: right;
-    padding: 0;
-  }
-
-  .navbar-right {
-    width: 130px;
-    margin: 0 15px;
-    background-color: white;
-    .list-item {
-      a {
-        padding-left: 15px !important;
-      }
-    }
-    .dropdown-menu {
-      background: #a1b82f !important;
-    }
-  }
 
   .footer-links {
     padding-left: 0 !important;
