@@ -16,6 +16,11 @@
 @import "bootstrap";
 @import "home.css.scss";
 
+$rt-light-green: #a1b82f;
+$rt-dark-green: #819c1a;
+$rt-orange: #f58327;
+$rt-blue: #0089ce;
+
 @font-face {
   font-family: 'Dosis';
   src: font-url('dosis-regular-webfont.woff') format('woff'),
@@ -41,17 +46,19 @@
 
 #logo {
   min-width: 390px;
-  height: 168px;
+  height: 200px;
   margin: 0 5px;
   // float: left;
   position: static;
-  background: image-url("read_today_logo.png") no-repeat;
+  background: image-url("deseret_news_logo.png") no-repeat center;
+  background-size: cover;
   // z-index: 20;
 }
 
 .logo {
+  max-height: 200px !important;
   float: left;
-  padding: 0;
+  padding: 0 20px;
   margin: auto;
 }
 
@@ -62,8 +69,50 @@
   font-family: 'Dosis', sans-serif;
 }
 
+#media-tab {
+  width: 120px;
+  text-align: center;
+}
+
+.nav-top-link:hover > :first-child {
+  color: $rt-orange;
+  background-color: transparent;
+}
+
 .dropdown-menu {
   display: none;
+  border: none;
+  background-color: $rt-light-green;
+  li a {
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    &:hover {
+      color: white;
+      background-color: $rt-dark-green;
+    }
+  }
+}
+
+#programs-dropdown {
+  min-width: 117.56px;
+  li > a {
+    min-width: 117px;
+  }
+}
+
+#resources-dropdown {
+  min-width: 124px;
+  li > a {
+    min-width: 124px;
+  }
+}
+
+#media-dropdown {
+  min-width: 120px;
+  li > a {
+    min-width: 120px;
+  }
 }
 
 .dropdown-menu li:hover {
@@ -101,11 +150,11 @@
 }
 
 .icon-bar {
-  background-color: black;
+  background-color: white;
 }
 
 .btn-navbar {
-  background-color: gray;
+  background-color: $rt-light-green;
 }
 
 
@@ -121,7 +170,6 @@
   }
 
   .logo {
-    padding: 0;
     margin: 0 auto;
   }
 
@@ -140,6 +188,20 @@
     position: absolute;
     left: 120px;
     top: 0;
+  }
+
+  .logo {
+    padding: 0;
+  }
+
+  .nav-top-link:hover > :first-child {
+    background-color: $rt-blue;
+    color: white;
+  }
+
+  #media-tab {
+    width: auto;
+    text-align: left;
   }
 
 }
