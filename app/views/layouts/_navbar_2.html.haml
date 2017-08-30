@@ -1,16 +1,16 @@
-.container-fluid.blacky.col-md-8.col-xs-8
+.container.blacky.col-lg-8.col-md-10.col-xs-12
   %nav.navbar
     .container-fluid
       %a.btn.btn-navbar.navbar-toggle.collapsed{ "data-target" => ".navbar-collapse", "data-toggle" => "collapse" }
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      .nav-collapse
-        %ul.nav.navbar-nav
+      .collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
           %li
             %a{href: '#'} OUR MISSION
           %li.dropdown
-            %a{"data-toggle" => "dropdown", class: "dropdown-toggle"} PROGRAMS
+            %a PROGRAMS
             %ul.dropdown-menu
               %li
                 %a{href: '#'} SUMMER READING
@@ -19,14 +19,14 @@
               %li
                 %a{href: '#'} VOLUNTEER
           %li.dropdown
-            %a{ "data-toggle" => "dropdown", class: "dropdown-toggle" } RESOURCES
+            %a RESOURCES
             %ul.dropdown-menu
               %li
                 %a{href: '#'} 123 CONNECT
               %li
                 %a{href: '#'} FAQs
           %li.dropdown
-            %a{ "data-toggle" => "dropdown", class: "dropdown-toggle" } MEDIA
+            %a MEDIA
             %ul.dropdown-menu
               %li
                 %a{href: '#'} NEWS
