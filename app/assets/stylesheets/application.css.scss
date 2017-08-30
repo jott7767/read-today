@@ -40,7 +40,7 @@
 }
 
 #logo {
-  // min-width: 397px;
+  min-width: 390px;
   height: 168px;
   margin: 0 5px;
   // float: left;
@@ -52,6 +52,7 @@
 .logo {
   float: left;
   padding: 0;
+  margin: auto;
 }
 
 .blacky {
@@ -116,7 +117,6 @@
 @media only screen and (max-width: 1182px) {
   .blacky {
     margin-top: 0;
-    float: left;
     clear: left;
   }
 
@@ -124,13 +124,6 @@
     padding: 0;
     margin: 0 auto;
   }
-
-  li.dropdown:hover .dropdown-menu {
-    position: absolute;
-    left: 150px;
-    top: 0;
-  }
-
 
   .footer-links {
     padding-left: 0 !important;
@@ -140,4 +133,13 @@
     float: left;
     clear: left;
   }
+}
+
+@media only screen and (max-width: 758px) {
+  li.dropdown:hover .dropdown-menu {
+    position: absolute;
+    left: 120px;
+    top: 0;
+  }
+
 }

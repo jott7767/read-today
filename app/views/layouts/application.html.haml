@@ -10,10 +10,9 @@
   %body
     .wrapper
       .top-bar
-      .container-fluid.logo.col-lg-4.col-md-8.col-xs-12
-        %a{ href: root_path }
-          #logo
-      = render partial: 'layouts/navbar_2'
+      .container-fluid.logo.col-lg-4.col-md-6.col-xs-8  
+        #logo
+      = render partial: 'layouts/navbar'
 
       .container-fluid.page-container
         = yield

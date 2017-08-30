@@ -8,14 +8,14 @@
       .collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a{href: '#'} OUR MISSION
+            = link_to 'OUR MISSION', pages_index_path(page: 'our_mission')
           %li.dropdown
             %a PROGRAMS
             %ul.dropdown-menu
               %li
-                %a{href: '#'} SUMMER READING
+                = link_to 'SUMMER READING', pages_index_path(page: 'summer_reading')
               %li
-                %a{href: '#'} PIZZA PLEDGE
+                = link_to 'PIZZA PLEDGE', pages_index_path(page: 'pizza_pledge')
               %li
                 %a{href: '#'} VOLUNTEER
           %li.dropdown
