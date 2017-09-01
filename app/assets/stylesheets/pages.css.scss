@@ -1,0 +1,28 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+  font-family: 'Bubblegum Sans';
+  src: font-url('bubblegumsans-regular-webfont.woff') format('woff'),
+       font-url('bubblegumsans-regular-webfont.woff2') format('woff'),
+       font-url('BubblegumSans-Regular.ttf') format('truetype');
+}
+
+.dmca-header {
+  color: #D47700;
+  font-size: 3em;
+  font-family: 'Bubblegum Sans';
+}
+
+.dmca-list {
+  padding-left: 30px;
+}
+
+
+@media only screen and (max-width: 758px) {
+
+  .dmca-header {
+    font-size: 2em;
+  }
+}
