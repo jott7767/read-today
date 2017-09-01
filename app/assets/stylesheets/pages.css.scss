@@ -9,6 +9,19 @@
        font-url('BubblegumSans-Regular.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'Dosis-Bold';
+	src: url('Dosis-Bold.eot');
+	src: url('Dosis-Bold.eot?#iefix') format('embedded-opentype'),
+		url('Dosis-Bold.woff') format('woff'),
+		url('Dosis-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+//********* footer links pages css ***********
+
 .bottom-links-header {
   color: #D47700;
   font-size: 3em;
@@ -23,6 +36,32 @@
   padding-left: 0;
 }
 
+// ******** css for static pages linked by the navbar ************
+
+.nav-links-header {
+  font-family: 'Dosis-bold', sans-serif;
+  color: #f58327;
+}
+
+h3, h4 {
+  font-family: 'Dosis', sans-serif;
+  margin-top: 30px;
+}
+.green-h3 {
+  color: #6fa315;
+}
+
+.orange-h4 {
+  color: #f58327;
+}
+
+.blue-h4 {
+  color: #0089ce;
+  padding-left: 0;
+}
+
+
+// *********** phone screen ***********
 
 @media only screen and (max-width: 758px) {
 

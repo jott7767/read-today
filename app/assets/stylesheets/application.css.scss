@@ -23,11 +23,16 @@ $rt-orange: #f58327;
 $rt-blue: #0089ce;
 
 @font-face {
-  font-family: 'Dosis';
-  src: font-url('dosis-regular-webfont.woff') format('woff'),
-       font-url('dosis-regular-webfont.woff2') format('woff'),
-       font-url('Dosis-Regular.ttf') format('truetype');
+	font-family: 'Dosis';
+	src: asset-url('Dosis-Regular.eot');
+	src: asset-url('Dosis-Regular.eot?#iefix') format('embedded-opentype'),
+		asset-url('Dosis-Regular.woff') format('woff'),
+		asset-url('Dosis-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
+
+// ************ top of every page ***********
 
 .top-bar {
   height: 80px;
@@ -62,6 +67,8 @@ $rt-blue: #0089ce;
   padding: 0 20px;
   margin: auto;
 }
+
+// ************** Navbar specifics *************
 
 .blacky {
   margin: 80px 0 0;
@@ -124,6 +131,7 @@ $rt-blue: #0089ce;
   display: block;
 }
 
+// **************  bottom of every page ***********
 
 .page-bottom {
   // height: 60px;
@@ -158,9 +166,7 @@ $rt-blue: #0089ce;
 }
 
 
-
-
-
+// ************** smaller screens than 'huge' **************
 
 
 @media only screen and (max-width: 1182px) {
@@ -182,6 +188,8 @@ $rt-blue: #0089ce;
     clear: left;
   }
 }
+
+// **************** just phones pretty much *************
 
 @media only screen and (max-width: 758px) {
   li.dropdown:hover .dropdown-menu {
