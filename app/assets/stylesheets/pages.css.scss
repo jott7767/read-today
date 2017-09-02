@@ -32,10 +32,6 @@
   padding-left: 30px;
 }
 
-#address-block {
-  padding-left: 0;
-}
-
 // ******** css for static pages linked by the navbar ************
 
 .nav-links-header {
@@ -60,6 +56,19 @@ h3, h4 {
   padding-left: 0;
 }
 
+.no-padding-left {
+  padding-left: 0;
+}
+
+.light-orange-span {
+  font-family: 'Dosis-Bold', sans-serif;
+  color: #fbad1c;
+}
+
+.dosis-font {
+  font-family: 'Dosis', sans-serif;
+}
+
 
 // *********** phone screen ***********
 
@@ -67,5 +76,9 @@ h3, h4 {
 
   .dmca-header {
     font-size: 2em;
+  }
+
+  .disappears-on-phones {
+    display: none;
   }
 }

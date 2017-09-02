@@ -24,10 +24,11 @@ $rt-blue: #0089ce;
 
 @font-face {
 	font-family: 'Dosis';
-	src: asset-url('Dosis-Regular.eot');
-	src: asset-url('Dosis-Regular.eot?#iefix') format('embedded-opentype'),
-		asset-url('Dosis-Regular.woff') format('woff'),
-		asset-url('Dosis-Regular.ttf') format('truetype');
+	src: font-url('Dosis-Regular.eot');
+	src: font-url('Dosis-Regular.eot?#iefix') format('embedded-opentype'),
+		font-url('dosis-regular-webfont.woff') format('woff'),
+    font-url('dosis-regular-webfont.woff2') format('woff'),
+		font-url('Dosis-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -62,7 +63,7 @@ $rt-blue: #0089ce;
 }
 
 .logo {
-  max-height: 200px !important;
+  max-height: 220px !important;
   float: left;
   padding: 0 20px;
   margin: auto;
