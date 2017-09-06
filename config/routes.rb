@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :news
-  
+  resources :news_stories, controller: 'news'
+
   resources :posts
 
   namespace :pages do
