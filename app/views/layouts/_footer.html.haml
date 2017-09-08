@@ -6,4 +6,7 @@
       = link_to 'DMCA Notice', pages_index_path(page: 'dmca_notice')
       |
       = link_to 'Privacy Statement', pages_index_path(page: 'privacy_statement')
+      - if user_signed_in?
+        |
+        = link_to 'Sign Out', destroy_user_session_path, method: :delete 
   .footer-ksl-logo.col-md-2.col-xs-6.clearfix
