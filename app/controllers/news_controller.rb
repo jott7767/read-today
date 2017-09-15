@@ -14,7 +14,7 @@ class NewsController < ApplicationController
   end
 
   def create
-    @story = NewsStory.create(news_params)
+    @story = current_user.NewsStory.create(news_params)
 
     if @story.save
       redirect_to news_stories_path
@@ -42,6 +42,6 @@ class NewsController < ApplicationController
   private
 
   def news_params
-    params.require(:news_story).permit(:title, :body, :air_date, :embed_url)
+    params.require(:news_story).permit(:title, :body, :air_date, :embed_url, :user_id)
   end
 end

@@ -1,28 +1,31 @@
 .container-fluid.col-md-12
   .container-fluid.col-md-11.col-md-offset-1
-    %h1.nav-links-header NEWS
-    %br
-    - if user_signed_in? && current_user.has_roles?(:admin)
-      = link_to 'create a story', new_news_story_path
-    - @news.each do |story|
-      .panel.panel-default
-        .panel-heading
-          %h1.dosis-font.green-h3
-            = story.title
-        .panel-body
-          - if story.embed_url.present?
-            .embed-responsive.embed-responsive-16by9
-              %iframe.embed-responsive-item{ src: "#{story.embed_url}", allowfullscreen: 'true' }
-          -# %br
-          %h3.dosis-font
-            = story.air_date.strftime('%m/%d/%Y') if story.air_date.present?
-            %br
-          %p.dosis-font
-            = story.body
-            %br
-            %br
-          - if user_signed_in? && current_user.has_roles?(:admin)
-            %p
-              = link_to 'edit', edit_news_story_path(story)
-              = link_to 'delete story', news_story_path(story), method: :delete
-    = will_paginate @news, page_links: false, class: 'digg_pagination'
+    .container-fluid.col-md-8
+      %h1.nav-links-header NEWS
+      %br
+      - if admin_signed_in?
+        = link_to 'create a story', new_news_story_path
+      - @news.each do |story|
+        .panel.panel-default.blue-border
+          .panel-heading
+            %h1.dosis-font.green-h3
+              = story.title
+          .panel-body
+            - if story.embed_url.present?
+              .embed-responsive.embed-responsive-16by9
+                %iframe.embed-responsive-item{ src: "#{story.embed_url}", allowfullscreen: 'true' }
+            -# %br
+            %h3.dosis-font
+              = story.air_date.strftime('%m/%d/%Y') if story.air_date.present?
+              %hr
+            %p.dosis-font
+              = story.body
+              %br
+              %br
+            - if admin_signed_in?
+              %p
+                = link_to 'edit', edit_news_story_path(story)
+                |
+                = link_to 'delete story', news_story_path(story), method: :delete
+      .page-buttons
+        = will_paginate @news, page_links: false, class: 'digg_pagination'
