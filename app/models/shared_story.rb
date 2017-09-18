@@ -1,0 +1,2 @@
+class SharedStory < ApplicationRecord
+end
