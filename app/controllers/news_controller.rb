@@ -14,8 +14,7 @@ class NewsController < ApplicationController
   end
 
   def create
-    @story = current_user.NewsStory.create(news_params)
-
+    @story = current_user.news_stories.create(news_params)
     if @story.save
       redirect_to news_stories_path
     else
