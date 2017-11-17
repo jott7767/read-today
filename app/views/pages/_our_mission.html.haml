@@ -1,6 +1,6 @@
 .container-fluid.col-md-12
   = render partial: 'layouts/vertical_circles'
-  .container-fluid.col-md-8.col-md-offset-1
+  .container.col-md-5.col-md-offset-1
     %h1.nav-links-header Our Mission
     %h3.green-h3
       %strong
@@ -10,6 +10,9 @@
         INCENTIVES TO HELP YOUNG READERS.
       %br
       %br
+  .container.col-md-3.robot.disappears-on-phones
+    %img{src: "/images/robot.gif"}
+  .container-fluid.col-md-8.col-md-offset-1
     .container-fluid.no-padding-left.dosis-font.bigger-font
       %p Dear Readers and Partners,
       %br
@@ -36,3 +39,5 @@
         a child's life today.
       %br
       %br
+    .container-fluid.col-md-offset-3
+      %img{src: "/images/duck.png"}
