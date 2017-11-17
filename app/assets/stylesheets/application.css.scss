@@ -17,6 +17,7 @@
 @import "home.css.scss";
 @import "pages.css.scss";
 @import "news.css.sass";
+@import "circles.css.sass";
 
 $rt-light-green: #a1b82f;
 $rt-dark-green: #819c1a;
@@ -212,6 +213,10 @@ $rt-blue: #0089ce;
   #media-tab {
     width: auto;
     text-align: left;
+  }
+
+	.disappears-on-phones {
+    display: none;
   }
 
 }

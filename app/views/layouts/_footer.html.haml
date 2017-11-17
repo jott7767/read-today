@@ -1,12 +1,13 @@
-.container-fluid.page-bottom.col-md-12.col-sx-12.clearfix
-  .footer-links-container.col-md-6.col-xs-10.clearfix
-    %p.footer-links.dosis-font
-      = link_to 'Terms of Use', pages_index_path(page: 'terms_of_use')
-      |
-      = link_to 'DMCA Notice', pages_index_path(page: 'dmca_notice')
-      |
-      = link_to 'Privacy Statement', pages_index_path(page: 'privacy_statement')
-      - if user_signed_in?
+%footer
+  .container-fluid.page-bottom.col-md-12.col-sx-12.clearfix
+    .footer-links-container.col-md-6.col-xs-10.clearfix
+      %p.footer-links.dosis-font
+        = link_to 'Terms of Use', pages_index_path(page: 'terms_of_use')
         |
-        = link_to 'Sign Out', destroy_user_session_path, method: :delete 
-  .footer-ksl-logo.col-md-2.col-xs-6.clearfix
+        = link_to 'DMCA Notice', pages_index_path(page: 'dmca_notice')
+        |
+        = link_to 'Privacy Statement', pages_index_path(page: 'privacy_statement')
+        - if user_signed_in?
+          |
+          = link_to 'Sign Out', destroy_user_session_path, method: :delete
+    .footer-ksl-logo.col-md-2.col-xs-6.clearfix
