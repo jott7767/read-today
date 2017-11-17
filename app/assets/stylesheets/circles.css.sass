@@ -1,4 +1,4 @@
-.verticle-circles
+.vertical-circles
   height: 100%
   padding: 0
   float: right
@@ -18,6 +18,8 @@
   width: 100%
   height: 100%
   padding: 20px
+  text-align: center
+  vertical-align: middle
 
 .inner-circle
   width: 100%
@@ -42,3 +44,21 @@
 
 .dark-orange-circle
   background: #fbad1c
+
+.circle-content
+  position: absolute
+  left: 25%
+  right: 25%
+  top: 20%
+  .circle-header
+    font-size: 25px
+    font-family: 'Dosis-Bold'
+    color: white
+  .circle-text
+    font-family: 'Dosis'
+    font-weight: bold
+
+
+@media only screen and (max-width: 992px)
+  .disappears-on-phones
+    display: none

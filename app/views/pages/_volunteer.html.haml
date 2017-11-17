@@ -1,5 +1,6 @@
 .container-fluid.col-md-12
-  .container-fluid.col-md-11.col-md-offset-1
+  = render partial: 'layouts/vertical_circles'
+  .container-fluid.col-md-8.col-md-offset-1
     %h1.nav-links-header VOLUNTEER
     %h3.green-h3.col-md-6.no-padding-left
       GET INVOLVED AND OPEN
@@ -12,7 +13,7 @@
       %br
   .container-fluid.col-md-8.col-md-offset-1
     .container-fluid.no-padding-left
-      %p
+      %p.dosis-bold.bigger-font
         The
         %strong Read.Graduate.Succeed.
         program places AmeriCorps members in elementary schools. These members
@@ -21,7 +22,7 @@
         their classroom teachers and principals.
       %br
     .container-fluid.no-padding-left
-      %p
+      %p.dosis-font.bigger-font
         Volunteers are asked to provide 1-2 hours of service a week at an
         elementary school in your area. You will be tutoring a child 1:1 in a
         public area, where other tutors are serving, with supervision of a school
