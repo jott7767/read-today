@@ -1,0 +1,18 @@
+.container-fluid.col-md-12
+  = render partial: 'layouts/vertical_circles'
+  .container-fluid.col-md-8.col-md-offset-1.clearfix
+    .container-fluid.col-md-12
+      %h1.nav-links-header Shared Stories
+      %br
+    .container-fluid.col-md-12
+      - if admin_signed_in?
+        -  @pending_stories.each do |story|
+          .container-fluid.col-md-6.col-md-offset-1
+            %h2
+              - if story.synopsis
+                =  story.synopsis
+            %p.dosis-font.bigger-font
+              = story.body
+              - if story.name
+                = story.name
+            %p - Anonymous

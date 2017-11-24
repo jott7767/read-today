@@ -1,4 +1,4 @@
-.container.blacky.col-lg-8.col-md-10.col-xs-12
+.container-fluid.blacky.col-md-7.col-xs-12
   %nav.navbar
     .container-fluid
       %a.btn.btn-navbar.navbar-toggle.collapsed{ "data-target" => ".navbar-collapse", "data-toggle" => "collapse" }
@@ -24,6 +24,6 @@
               %li
                 = link_to 'NEWS', news_stories_path
               %li
-                = link_to 'SHARED STORIES', pages_index_path(page: 'share_story')
+                = link_to 'SHARED STORIES', shared_stories_path
           %li.nav-top-link
             = link_to 'CONTACT', pages_index_path(page: 'contact_us')

@@ -2,6 +2,7 @@
 %html
   %head
     %title ReadToday
+    = favicon_link_tag 'RT_logo-vertical'
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'
@@ -10,11 +11,12 @@
   %body
     .wrapper
       .top-bar
-      .container-fluid.logo.col-lg-4.col-md-4.col-xs-8
-        #logo
+      .container-fluid.logo.col-md-5.col-xs-8
+        %a{href: "/"}
+          %img.container.col-md-12{src: "/images/desret_news_resized.png"}
       = render partial: 'layouts/navbar'
 
       .container-fluid.page-container
         = yield
-        
+
     = render partial: 'layouts/footer'
