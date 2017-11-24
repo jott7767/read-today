@@ -78,10 +78,32 @@ h3, h4 {
   font-weight: bold;
 }
 
-.robot {
-  margin-top: 10%;
+.word-bubble {
+  float: right;
+  margin-top: 105px;
+  // margin-bottom: -50px;
+  .word-bubble-container {
+    position: relative;
+    background: url('/images/word-bubble.png') no-repeat center;
+    height: 200px;
+  }
+  .words-container {
+    padding-top: 20%;
+    padding-left: 35%;
+  }
 }
 
+.bubbles {
+  margin-bottom: -75px;
+}
+
+.robot {
+  margin-top: 130px;
+}
+
+.space-ship-gif {
+  margin-top: 70px;
+}
 
 // *********** phone screen ***********
 
@@ -92,6 +114,12 @@ h3, h4 {
   }
 
   .disappears-on-phones {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1220px) {
+  .word-bubble-container, .word-bubble {
     display: none;
   }
 }
