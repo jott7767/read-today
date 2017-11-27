@@ -65,6 +65,8 @@ h3, h4 {
   color: #fbad1c;
 }
 
+// ******** misc fonts css ****** //
+
 .dosis-font {
   font-family: 'Dosis', sans-serif;
 }
@@ -78,8 +80,9 @@ h3, h4 {
   font-weight: bold;
 }
 
+// *************** home screen bubbles and stuff ***********//
 .word-bubble {
-  float: right;
+  max-width: 287px;
   margin-top: 105px;
   // margin-bottom: -50px;
   .word-bubble-container {
@@ -95,6 +98,7 @@ h3, h4 {
 
 .bubbles {
   margin-bottom: -75px;
+  padding: 0;
 }
 
 .robot {
@@ -104,6 +108,7 @@ h3, h4 {
 .space-ship-gif {
   margin-top: 70px;
 }
+
 
 // *********** phone screen ***********
 

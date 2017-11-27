@@ -55,7 +55,7 @@ $rt-blue: #0089ce;
 
 .logo {
 	img {
-		max-height: 250px !important;
+		max-height: 250px;
 		width: 492px;
 	}
   float: left;
@@ -194,9 +194,6 @@ $rt-blue: #0089ce;
     top: 0;
   }
 
-  .logo {
-    padding: 0;
-  }
 
   .nav-top-link:hover > :first-child {
     background-color: $rt-blue;
@@ -211,5 +208,14 @@ $rt-blue: #0089ce;
 	.disappears-on-phones {
     display: none;
   }
+
+	.logo img{
+		max-height: 150px;
+		width: 400px;
+	}
+
+	.blacky {
+		min-width: 400px;
+	}
 
 }

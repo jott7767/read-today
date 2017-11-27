@@ -1,0 +1,28 @@
+.container.col-md-12.hide#story-form
+  = form_for story, url: {controller: 'shared_stories', acton: 'create'} do |s|
+    .form-group
+      %p
+        = s.text_field :name, placeholder: 'Name', class: 'form-control'
+
+      %p
+        = s.text_field :synopsis, placeholder: 'Topic', class: 'form-control'
+
+      %label May we contact you?
+      .form-check.form-check-inline
+        %label.form-check-label
+          %input{class: 'form-check-input', type: 'radio', name: 'inlineRadioOptions',
+            id: 'inlineRadio1', value: 'yes'}
+            Yes
+          %input{class: 'form-check-input', type: 'radio', name: 'inlineRadioOptions',
+            id: 'inlineRadio2', value: 'no'}
+            No
+      %p.col-md-6
+        = s.telephone_field :phone, placeholder: '(xxx) xxx-xxxx', disabled: 'true', class: 'form-control disabled-inputs'
+      %p.col-md-6
+        = s.email_field :email, placeholder: 'example@example.com', disabled: 'true', class: 'form-control disabled-inputs'
+      %p
+        = s.text_area :body,
+          placeholder: 'Please write a short paragraph describing your experience with Read Today',
+          class: 'form-control', rows: '10'
+
+      %button{type: 'submit', class: 'btn btn-primary'} Submit

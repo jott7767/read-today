@@ -1,18 +1,69 @@
 .container-fluid.col-md-12
   = render partial: 'layouts/vertical_circles'
-  .container-fluid.col-md-8.col-md-offset-1.clearfix
+  .container-fluid.col-md-8.col-md-offset-1
     .container-fluid.col-md-12
-      %h1.nav-links-header Shared Stories
+      %h1.nav-links-header SHARED STORIES
       %br
     .container-fluid.col-md-12
       - if admin_signed_in?
         -  @pending_stories.each do |story|
-          .container-fluid.col-md-6.col-md-offset-1
+          .container-fluid.col-md-10.col-md-offset-1.dosis-font.bigger-font
             %h2
               - if story.synopsis
                 =  story.synopsis
-            %p.dosis-font.bigger-font
+            %p
               = story.body
-              - if story.name
-                = story.name
-            %p - Anonymous
+            - if story.name
+              %p.col-md-offset-1
+                = "- #{story.name}"
+            - else
+              %p.col-md-offset-1 - Anonymous
+            = link_to 'APPROVE', edit_shared_story_path(story, approved: 'true'), class: 'btn btn-primary'
+            = link_to 'TRASH', shared_story_path(story.id), method: :delete, class:'btn btn-primary'
+            %hr
+
+    .container-fluid.col-md-12
+      -  @approved_stories.each do |story|
+        .container-fluid.col-md-10.col-md-offset-1.dosis-font.bigger-font
+          %h2
+            - if story.synopsis
+              =  story.synopsis
+          %p
+            = story.body
+          - if story.name
+            %p.col-md-offset-1
+              = "- #{story.name}"
+          - else
+            %p.col-md-offset-1 - Anonymous
+          %hr
+  .container.col-md-8.col-md-offset-1
+    %button.btn.btn-primary#share-story-button SHARE YOUR STORY
+    = render partial: 'form', locals: {story: @story}
+
+- content_for :javascript do
+  :javascript
+    $(document).ready(function() {
+      $('#share-story-button').click(function() {
+        $(this).addClass('hide');
+        $('#story-form').removeClass('hide');
+        setCheckListener();
+      });
+
+      setCheckListener = function() {
+        $('.form-check-input').click(function() {
+          if ($('#inlineRadio1').is(':checked')) {
+            $('.disabled-inputs').attr('disabled', false);
+          }else {
+            $('.disabled-inputs').attr('disabled', true);
+          }
+        });
+        return;
+      }
+
+      divFade = function() {
+        $('.alert').fadeOut(3000);
+        return;
+      }
+      window.setTimeout(divFade, 5000);
+    return;
+    });
