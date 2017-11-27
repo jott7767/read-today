@@ -1,11 +1,13 @@
 .container-fluid.col-md-12
   = render partial: 'layouts/vertical_circles'
-  .container-fluid.col-md-8.col-md-offset-1.clearfix
+  .container-fluid.col-md-9
     .container-fluid.col-md-12
       %h1.nav-links-header NEWS
       %br
       - if admin_signed_in?
-        = link_to 'create a story', new_news_story_path
+        = link_to 'create a story', new_news_story_path, class: 'btn btn-primary'
+      %br
+      %br
       - @news.each do |story|
         .panel.panel-default.blue-border
           .panel-heading

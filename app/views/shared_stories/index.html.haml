@@ -1,6 +1,6 @@
 .container-fluid.col-md-12
   = render partial: 'layouts/vertical_circles'
-  .container-fluid.col-md-8.col-md-offset-1
+  .container-fluid.col-md-9
     .container-fluid.col-md-12
       %h1.nav-links-header SHARED STORIES
       %br
@@ -8,9 +8,9 @@
       - if admin_signed_in?
         -  @pending_stories.each do |story|
           .container-fluid.col-md-10.col-md-offset-1.dosis-font.bigger-font
-            %h2
-              - if story.synopsis
-                =  story.synopsis
+            - if story.synopsis
+              %h2.blue-h4
+                = story.synopsis
             %p
               = story.body
             - if story.name
@@ -25,7 +25,7 @@
     .container-fluid.col-md-12
       -  @approved_stories.each do |story|
         .container-fluid.col-md-10.col-md-offset-1.dosis-font.bigger-font
-          %h2
+          %h2.blue-h4
             - if story.synopsis
               =  story.synopsis
           %p
@@ -35,9 +35,14 @@
               = "- #{story.name}"
           - else
             %p.col-md-offset-1 - Anonymous
-          %hr
-  .container.col-md-8.col-md-offset-1
+          %hr.green-hr
+  .container.col-md-9
+    %br
     %button.btn.btn-primary#share-story-button SHARE YOUR STORY
+    %br
+    %br
+    %br
+
     = render partial: 'form', locals: {story: @story}
 
 - content_for :javascript do
