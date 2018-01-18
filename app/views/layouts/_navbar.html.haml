@@ -12,14 +12,14 @@
           %li.dropdown.nav-top-link
             = link_to 'SCHEDULE', pages_index_path(page: 'schedule')
           %li.dropdown.nav-top-link
-            %a RESOURCES
+            %a{style: 'cursor: pointer;'} RESOURCES
             %ul.dropdown-menu#resources-dropdown
               %li
                 = link_to '123 CONNECT', pages_index_path(page: '123_connect')
               %li
                 = link_to 'FAQs', pages_index_path(page: 'frequent_questions')
           %li.dropdown.nav-top-link
-            %a#media-tab MEDIA
+            %a#media-tab{style: 'cursor: pointer;'} MEDIA
             %ul.dropdown-menu#media-dropdown
               %li
                 = link_to 'NEWS', news_stories_path

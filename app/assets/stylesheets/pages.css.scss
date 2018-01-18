@@ -80,6 +80,16 @@ h3, h4 {
   font-weight: bold;
 }
 
+.schedule-container {
+  a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    color: #0089ce;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
 // *************** home screen bubbles and stuff ***********//
 .word-bubble {
   max-width: 287px;
