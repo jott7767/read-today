@@ -9,7 +9,7 @@
       %br
       %br
       - @news.each do |story|
-        .panel.panel-default.blue-border
+        .panel.panel-default.grey-border
           .panel-heading
             %h1.dosis-font.green-h3
               = story.title
@@ -18,9 +18,10 @@
               .embed-responsive.embed-responsive-16by9
                 %iframe.embed-responsive-item{ src: "#{story.embed_url}", allowfullscreen: 'true' }
             -# %br
-            %h3.dosis-font
-              = story.air_date.strftime('%m/%d/%Y') if story.air_date.present?
-              %hr
+            - if story.air_date.present?
+              %h3.dosis-font
+                = story.air_date.strftime('%m/%d/%Y')
+                %hr
             %p.dosis-font
               = story.body
               %br
@@ -32,3 +33,5 @@
                 = link_to 'delete story', news_story_path(story), method: :delete
       .page-buttons
         = will_paginate @news, page_links: false, class: 'digg_pagination'
+        %br
+        %br
