@@ -22,6 +22,7 @@ gem 'petergate', '~> 1.7', '>= 1.7.5'
 gem 'haml', '~> 5.0', '>= 5.0.2'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'paperclip', '~> 5.2', '>= 5.2.1'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'pry-byebug', '~> 3.4', '>= 3.4.3'

@@ -30,7 +30,7 @@
               %p
                 = link_to 'edit', edit_news_story_path(story)
                 |
-                = link_to 'delete story', news_story_path(story), method: :delete
+                = link_to 'delete story', news_story_path(story), method: :delete, data: { confirm: "Are you sure?" }
       .page-buttons
         = will_paginate @news, page_links: false, class: 'digg_pagination'
         %br

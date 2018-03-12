@@ -1,0 +1,27 @@
+.container-fluid.dosis-font.schedule-container
+  .container-fuid
+    %h1.nav-links-header{style: 'text-align: center;'}
+      READ TODAY SCHEDULE OF PUBLIC EVENTS
+    %p{style: 'text-align: center;'}
+      The Read Today team hosts a variety of events across the state. From visiting
+      elementary schools to join in a celebration of a literary accomplishment to
+      providing books and other needed items to Title I schools and community centers.
+      Here is a list of public events we will be participating in or hosting in 2018.
+      Please check back in throughout the year.  As we get closer to an event, more
+      details will be available.
+    - @activities.each do |activity|
+      %h3
+        - if activity.active
+          = link_to activity.name, activity_path(activity)
+        - else
+          = activity.name
+        %span -
+        %span.green-h3
+          = activity.month.titleize
+      .container-fluid
+        %p
+          = activity.description
+    - if admin_signed_in?
+      = render partial: "add_activity"
+      %br
+      %br

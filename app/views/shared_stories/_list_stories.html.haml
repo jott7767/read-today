@@ -1,0 +1,19 @@
+.container-fluid.col-md-10.col-md-offset-1.dosis-font.bigger-font
+  - if story.synopsis
+    %h2.blue-h4
+      = story.synopsis
+  %p
+    = story.body
+  - if story.name
+    %p.col-md-offset-1
+      = "- #{story.name}"
+  - else
+    %p.col-md-offset-1 - Anonymous
+
+  - if story.phone
+    %p
+      = "Phone: #{story.phone}"
+  - if story.email
+    %p
+      = "Email: #{story.email}"
+  %hr.green-hr
