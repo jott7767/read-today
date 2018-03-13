@@ -1,4 +1,7 @@
-%p
-  (This event is currently inactive)
-%p
-    
+- if admin_signed_in?
+  - if activity.active
+    = button_to "DEACTIVATE", toggle_activity_path(activity.id), class: "btn btn-primary", data: { confirm: "Are you sure?" }
+  - else
+    %p
+      (This event is currently inactive and will not show up to the public)
+      = button_to "ACTIVATE", toggle_activity_path(activity.id), class: "btn btn-primary", data: { confirm: "Are you sure?" }

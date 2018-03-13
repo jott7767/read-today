@@ -9,19 +9,22 @@
       Here is a list of public events we will be participating in or hosting in 2018.
       Please check back in throughout the year.  As we get closer to an event, more
       details will be available.
+      %br
+      - if admin_signed_in?
+        = render partial: "add_activity"
     - @activities.each do |activity|
       %h3
-        - if activity.active
+        - if viewable?(activity.month)
           = link_to activity.name, activity_path(activity)
         - else
           = activity.name
         %span -
         %span.green-h3
           = activity.month.titleize
+        = render partial: "activate", locals: { activity: activity }
+        %br
       .container-fluid
         %p
           = activity.description
-    - if admin_signed_in?
-      = render partial: "add_activity"
       %br
       %br

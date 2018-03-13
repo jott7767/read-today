@@ -11,6 +11,10 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
   end
 
+  def show
+    @activiy = Activity.find(params[:id])
+  end
+
   def create
     @activity = Activity.create(activity_params)
   end
