@@ -1,0 +1,6 @@
+.container-fluid.dosis-font
+  %h1.nav-links-header{style: 'text-align: center;'}
+    = @activity.name
+    = render partial: 'activate', locals: { activity: @activity }  
+  %h4
+    = @activity.description

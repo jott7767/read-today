@@ -16,7 +16,7 @@
           .panel-body
             - if story.embed_url.present?
               .embed-responsive.embed-responsive-16by9
-                %iframe.embed-responsive-item{ src: "#{story.embed_url}", allowfullscreen: 'true' }
+                %iframe.embed-responsive-item{ src: youtube_embed(story.embed_url), allowfullscreen: 'true' }
             -# %br
             - if story.air_date.present?
               %h3.dosis-font

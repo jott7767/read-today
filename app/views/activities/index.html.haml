@@ -24,9 +24,10 @@
             %span.green-h3
               = translate_month(activity.month)
             %br
-            = render partial: "activate", locals: { activity: activity }
+
           .container-fluid
             %p
               = activity.description
+            = render partial: "activate", locals: { activity: activity }  
           %br
           %br

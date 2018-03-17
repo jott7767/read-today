@@ -16,8 +16,7 @@
         Read Today is a high impact literacy program that motivates, educates and
         celebrates Utah’s kids. The Read Today team hosts and supports a variety
         of programs and events throughout the year. For a list of events
-        %a
-          click here
+        = link_to 'click here', activities_path
     .container-fluid.blue-h4
       %h4 WHAT IS THE PURPOSE OF READ TODAY
     .container-fluid
@@ -33,8 +32,7 @@
         Yes, every year we feature a Summer Reading Challenge in a special edition
         of the Deseret News. To obtain your copy, check with your local school,
         or visit our
-        %a
-          Schedule
+        = link_to 'Schedule', activities_path
         page at the end of the school year to download your own copy to get started.
     .container-fluid.blue-h4
       %h4 HOW CAN I GET CHOPPER 5 TO MY SCHOOL?
@@ -42,8 +40,7 @@
       %p
         We are always interested in hearing how your school is doing great things.
         We believe in telling the story of the community.
-        %a
-          SHARE
+        = link_to 'SHARE', shared_stories_path
         Let us know what you’re doing!
     .container-fluid.blue-h4
       %h4 I AM A MEMBER OF PTA, HOW CAN I BE INVOLVED?
@@ -51,8 +48,7 @@
       %p
         Reach out to your PTA president or Education Commissioner and see what
         opportunities your school has to help struggling readers. Or
-        %a
-          contact us
+        = link_to 'contact us', pages_index_path(page: 'contact_us')
         and tell us what you're doing. The Read Today team loves to help motivate
         and celebrate Utah's readers.
     -# %br

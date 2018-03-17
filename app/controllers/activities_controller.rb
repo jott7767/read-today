@@ -12,7 +12,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activiy = Activity.find(params[:id])
+    @activity = Activity.find(params[:id])
   end
 
   def create
@@ -40,6 +40,8 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to activities_path
   end
 
   private
