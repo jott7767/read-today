@@ -1,9 +1,9 @@
 class ActivitiesController < ApplicationController
   def index
     if admin_signed_in?
-      @activities = Activity.all
+      @activities = Activity.all.order("month ASC")
     else
-      @activities = Activity.where(active: true)
+      @activities = Activity.where(active: true).order("month ASC")
     end
   end
 
@@ -17,14 +17,25 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.create(activity_params)
+    if @activity.save
+      redirect_to activities_path
+    else
+      flash[:danger] = "There was a problem saving the event"
+      render :new
+    end
   end
 
   def edit
-    @activiy = Activity.find(params[:id])
+    @activity = Activity.find(params[:id])
   end
 
   def update
     @activity = Activity.find(params[:id])
+    if @activity.update(activity_params)
+      redirect_to activities_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -34,6 +45,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require
+    params.require(:activity).permit(:name, :month, :description)
   end
 end

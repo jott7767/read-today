@@ -1,7 +1,11 @@
 - if admin_signed_in?
-  - if activity.active
-    = button_to "DEACTIVATE", toggle_activity_path(activity.id), class: "btn btn-primary", data: { confirm: "Are you sure?" }
-  - else
-    %p
-      (This event is currently inactive and will not show up to the public)
-      = button_to "ACTIVATE", toggle_activity_path(activity.id), class: "btn btn-primary", data: { confirm: "Are you sure?" }
+  .container-fluid
+    .row.form-inline
+      - if activity.active
+        = link_to "DEACTIVATE", toggle_activity_path(activity.id), class: "btn btn-primary white-text-link", data: { confirm: "Deactivate?" }
+      - else
+        %p
+          (This event is currently inactive and will not show up to the public)
+        = link_to "ACTIVATE", toggle_activity_path(activity.id), class: "btn btn-primary white-text-link", data: { confirm: "Activate?" }
+      = link_to 'EDIT EVENT', edit_activity_path(activity.id), class: "btn btn-warning white-text-link"
+      = link_to 'DELETE', activity_path(activity), method: :delete, class: "btn btn-danger white-text-link", data: { confirm: "Delete this event?" }

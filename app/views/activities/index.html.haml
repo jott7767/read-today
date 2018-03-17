@@ -13,18 +13,20 @@
       - if admin_signed_in?
         = render partial: "add_activity"
     - @activities.each do |activity|
-      %h3
-        - if viewable?(activity.month)
-          = link_to activity.name, activity_path(activity)
-        - else
-          = activity.name
-        %span -
-        %span.green-h3
-          = activity.month.titleize
-        = render partial: "activate", locals: { activity: activity }
-        %br
       .container-fluid
-        %p
-          = activity.description
-      %br
-      %br
+        .row
+          %h3
+            - if viewable?(activity.month)
+              = link_to activity.name, activity_path(activity), class: "h3-link"
+            - else
+              = activity.name
+            %span -
+            %span.green-h3
+              = translate_month(activity.month)
+            %br
+            = render partial: "activate", locals: { activity: activity }
+          .container-fluid
+            %p
+              = activity.description
+          %br
+          %br

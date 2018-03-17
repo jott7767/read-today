@@ -1,0 +1,19 @@
+= form_for @activity do |f|
+  .form-group
+    %p
+      = f.label :name
+      %br
+      = f.text_field :name, class: 'form-control'
+
+    %p
+      = f.label :month
+      %br
+      = f.select :month, months_for_select { |m| [ m[0], m[1] ] }, include_blank: true
+
+    %p
+      = f.label :description
+      %br
+      = f.text_area :description, class: "form-control"
+
+    %p
+      = f.submit "SAVE", class: 'btn btn-primary'

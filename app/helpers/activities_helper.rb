@@ -8,8 +8,29 @@ module ActivitiesHelper
     if admin_signed_in?
       true
     else
-      clickable_months.include?(month)
+      clickable_months.include?(translate_month(month))
     end
+  end
+
+  def months_for_select
+    months = [
+      ["January",   1],
+      ["February",  2],
+      ["March",     3],
+      ["April",     4],
+      ["May",       5],
+      ["June",      6],
+      ["July",      7],
+      ["August",    8],
+      ["September", 9],
+      ["October",   10],
+      ["November",  11],
+      ["December",  12]
+    ]
+  end
+
+  def translate_month(num)
+    Date::MONTHNAMES[num.to_i]
   end
 
   private
