@@ -1,0 +1,25 @@
+= form_for @connect do |f|
+  .form-group
+
+    %p
+      = f.label :month
+      %br
+      = f.select :month, options_for_select(Date::MONTHNAMES), class: "form-control"
+
+    %p
+      = f.label :year
+      %br
+      = f.select :year, options_for_select(years_for_select), class: "form-control"
+
+    %p
+      = f.label :early, "Early?"
+      %br
+      = f.select :early, options_for_select([['Yes', true], ['No', false]]), class: "form-control"
+
+    %p
+      = form_tag '/upload', multipart: true do
+        %label{for: "file"} PDF Attachment
+      = file_field_tag "file"
+
+    %p
+      = f.submit "SAVE", class: 'btn btn-primary'

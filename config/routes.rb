@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   root 'home#index'
 
   resources :news_stories, controller: 'news'
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   namespace :pages do
     get :index
   end
+
+  resources :connects
 
   resources :shared_stories
 

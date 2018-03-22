@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  access all: [:index, :show], admin: :all
+  access all: [:index], admin: :all
   before_action :find_story, except: [:index, :new, :create]
 
   def index

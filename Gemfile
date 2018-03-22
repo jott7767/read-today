@@ -21,7 +21,7 @@ gem 'devise', '~> 4.3'
 gem 'petergate', '~> 1.7', '>= 1.7.5'
 gem 'haml', '~> 5.0', '>= 5.0.2'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
-gem 'paperclip', '~> 5.2', '>= 5.2.1'
+gem 'paperclip', '~> 6.0.0'
 gem 'aws-sdk', '~> 2.3'
 gem 'font-awesome-rails'
 

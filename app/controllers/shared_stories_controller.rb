@@ -1,5 +1,5 @@
 class SharedStoriesController < ApplicationController
-  access all: [:index, :show, :create], admin: :all
+  access all: [:index, :create], admin: :all
 
   def index
     @approved_stories = SharedStory.where(approved: true)
