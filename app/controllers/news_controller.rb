@@ -16,8 +16,10 @@ class NewsController < ApplicationController
   def create
     @story = current_user.news_stories.create(news_params)
     if @story.save
+      flash[:success] = "Your story was created"
       redirect_to news_stories_path
     else
+      flash[:danger] = "There was  a problem"
       render 'new'
     end
   end

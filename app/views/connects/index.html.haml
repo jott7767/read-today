@@ -16,4 +16,9 @@
           and send it to
           = mail_to("apoynor@utahmediagroup.com")
       - if admin_signed_in?
-        = link_to "Add", new_connect_path, class: "btn btn-primary"    
+        = link_to "Add", new_connect_path, class: "btn btn-primary"
+
+    - @connects.each do |connect|
+      %p
+        - thing = connect.attached_pdf
+        = link_to "#{thing.pdf_file_name}", "documents/pdf/#{thing.pdf_file_name}", target: :blank

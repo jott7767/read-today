@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320060011) do
+ActiveRecord::Schema.define(version: 20180323051941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,13 +25,15 @@ ActiveRecord::Schema.define(version: 20180320060011) do
   end
 
   create_table "attached_pdfs", force: :cascade do |t|
-    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pdf_file_name"
     t.string "pdf_content_type"
     t.integer "pdf_file_size"
     t.datetime "pdf_updated_at"
+    t.string "owner_type"
+    t.bigint "owner_id"
+    t.index ["owner_type", "owner_id"], name: "index_attached_pdfs_on_owner_type_and_owner_id"
   end
 
   create_table "connects", force: :cascade do |t|
