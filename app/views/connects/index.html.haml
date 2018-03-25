@@ -17,8 +17,28 @@
           = mail_to("apoynor@utahmediagroup.com")
       - if admin_signed_in?
         = link_to "Add", new_connect_path, class: "btn btn-primary"
+        %br
+        %br
+        %br
 
-    - @connects.each do |connect|
-      %p
-        - thing = connect.attached_pdf
-        = link_to "#{thing.pdf_file_name}", "documents/pdf/#{thing.pdf_file_name}", target: :blank
+
+  .container.col-md-9
+    =render partial: "other_connects"
+  -#   %ul.nav.nav-pills.nav-justified.mb-3#pills-tab{role: "tablist"}
+  -#     %li.nav-item.active
+  -#       %a.nav-link.active#123connect-tab{href:"#123connect", 'data-toggle' => 'pill', role:"tab", "aria-controls" => "123connect-tab", "aria-selected" => "true" }
+  -#         123 CONNECT
+  -#     %li.nav-item
+  -#       %a.nav-link#early-connect-tab{href:"#early-connect", 'data-toggle' => 'pill', role:"tab", "aria-controls" => "early-connect-tab", "aria-selected" => "false" }
+  -#         EARLY CONNECT
+  -#   .tab-content#connect-pillsContent
+  -#     .tab-pane.fade.show.active#123connect{role: "tabpanel", "aria-labelledby" => "123connect-tab"}
+  -#       = render partial: "list_connects", locals: { connects: @connects }
+  -#     .tab-pane.fade#early-connect{role: "tabpanel", "aria-labelledby" => "early-connect-tab"}
+  -#       = render partial: "other_connects", locals: { connects: @early_connects }
+
+
+
+
+
+    -#

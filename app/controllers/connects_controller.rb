@@ -2,8 +2,8 @@ class ConnectsController < ApplicationController
   access all:[:index], admin: :all
 
   def index
-    @connects = Connect.all
-    # @early_connects = Connect.where(early: true)
+    @connects       = Connect.late
+    @early_connects = Connect.early
   end
 
   def new
