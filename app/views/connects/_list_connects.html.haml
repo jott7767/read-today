@@ -1,3 +1,3 @@
 - connects.each do |connect|
   %h4.green-h3
-    = link_to "#{connect.display_name}", connect.attached_pdf.pdf.path, target: :blank
+    = link_to "#{connect.display_name}", connect.attached_pdf.pdf.url, target: :blank
