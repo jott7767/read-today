@@ -1,5 +1,5 @@
 class Connect < ApplicationRecord
-  has_one :attached_pdf, as: :owner
+  has_one :attached_pdf, as: :owner, dependent: :destroy
   # accepts_nested_attributes_for :attached_pdf
   scope :early, -> { where(early: true) }
   scope :late,  -> { where(early: false)}

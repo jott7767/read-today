@@ -4,9 +4,12 @@
       .inner-circle-container
         .inner-circle.dark-blue-circle
         .circle-content
-          %p.circle-header VOLUNTEER
+          %p.circle-header 123 CONNECT
           %p.circle-text
-            Support your local school and make a difference in a child's life today.
+            View or download our monthly publication with the
+            Deseret News, available to schools across the state
+            %br
+            = link_to "GO NOW", connects_path, class: "btn btn-sucess btn-sm", style:"color:white;background-color:#819c1a;"
   .circle-container
     .outer-circle.light-orange-circle
       .inner-circle-container
@@ -15,6 +18,8 @@
           %p.circle-header SUMMER READING
           %p.circle-text
             See how you can take part in this summer's challenge!
+            %br
+            = link_to "SCHEDULE", activities_path, class: "btn btn-sm", style: "color:white;background-color:#3b5998;"
   .circle-container
     .outer-circle.light-green-circle
       .inner-circle-container
@@ -28,4 +33,4 @@
             %i.fa.fa-facebook-square{style: "font-size:36px;color:#3b5998;"}
           &nbsp
           %a{href: "https://www.instagram.com/kslreadtoday", target: :_blank}
-            %i.fa.fa-instagram{style: "font-size:36px;color:#3b5998"}  
+            %i.fa.fa-instagram{style: "font-size:36px;color:#3b5998"}

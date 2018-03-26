@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root 'home#index'
 
   resources :news_stories, controller: 'news'
@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   post "/toggle_activity/:id", to: "toggle_activity#update", as: "toggle_activity"
-
+  post "/contact_us", to: "mail#create"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

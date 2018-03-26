@@ -1,1 +1,25 @@
-%h1 Contact Us
+.container-fluid.col-md-12
+  = render partial: "layouts/vertical_circles"
+  .container-fluid.col-md-9
+    .container-fluid
+      %h1.nav-links-header
+        CONTACT US
+      %h3.green-h3
+        TO SEND US A MESSAGE PLEASE COMPLETE THE FORM BELOW
+
+      = form_tag "/contact_us" do
+        %label
+          %h4.blue-h4
+            FROM
+        = text_field_tag "name", '', placeholder: "name", class: "form-control", required: true
+        %label
+          %h4.blue-h4
+            EMAIL
+        = text_field_tag "email", '', placeholder: "example@example.com", class: "form-control", required: true
+        %label
+          %h4.blue-h4
+            MESSAGE
+        = text_area_tag "message", '', placeholder: "Write your message here", class: "form-control", rows: 10, required: true
+        %br
+        %br
+        = button_tag "SEND", class: "btn btn-primary"

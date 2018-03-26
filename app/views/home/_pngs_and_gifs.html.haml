@@ -5,9 +5,12 @@
         .inner-circle-container
           .inner-circle.dark-blue-circle
           .circle-content
-            %p.circle-header VOLUNTEER
+            %p.circle-header 123 CONNECT
             %p.circle-text
-              Support your local school and make a difference in a child's life today.
+              View or download our monthly publication with the
+              Deseret News, available to schools across the state
+              %br
+              = link_to "GO NOW", connects_path, class: "btn btn-sm", style:"color:white;background-color:#819c1a;"
     .circle-container.container.col-md-3
       .outer-circle.light-orange-circle
         .inner-circle-container
@@ -16,6 +19,8 @@
             %p.circle-header SUMMER READING
             %p.circle-text
               See how you can take part in this summer's challenge!
+              %br
+              = link_to "SCHEDULE", activities_path, class: "btn btn-sm", style: "color:white;background-color:#3b5998;"
     .circle-container.container.col-md-3
       .outer-circle.light-green-circle
         .inner-circle-container
