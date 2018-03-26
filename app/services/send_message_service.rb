@@ -11,7 +11,7 @@ class SendMessageService
   end
 
   def send_message_now
-    ContactUsMailer.send_message(name: @name, from: @from, message: @message).deliver_now!
+    ContactUsMailer.send_message(name: @name, email: @from, message: @message).deliver_now!
   end
 
 end

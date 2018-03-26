@@ -39,6 +39,18 @@ Rails.application.configure do
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
     }
   }
+
+  config.action_mailer.smtp_settings = {
+    address:             "smtp.gmail.com",
+    port:                587,
+    domain:              "www.readtoday.com",
+    user_name: "hottjw@gmail.com",
+    password: "gtuh hanz skkw lvxo",
+    authentication:      'plain',
+    enabl_starttls_auto: true
+  }
+
+  config.action_mailer.default_url_options = { :host => 'https://quiet-bastion-49875.herokuapp.com/' }
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
