@@ -33,6 +33,10 @@ module ActivitiesHelper
     Date::MONTHNAMES[num.to_i]
   end
 
+  def summer_reading_time
+    %w(April May June July August).include?(Date::MONTHNAMES[Date.today.month])
+  end
+
   private
 
   def clickable_months

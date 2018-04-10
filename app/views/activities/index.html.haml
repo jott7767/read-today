@@ -12,6 +12,23 @@
       %br
       - if admin_signed_in?
         = render partial: "add_activity"
+    - if summer_reading_time
+      .container-fluid
+        .row
+          %h3
+            = link_to "Summer Reading Event", pages_index_path(page: "read_with_bees"), class: "h3-link"
+            %span -
+            %span.green-h3 June..August
+          .container-fluid
+            %p
+              This summer reading program, presented by Read Today, Deseret News and KSL,
+              in partnership with McDonalds and the Governor’s Office, begins in June
+              and runs through the summer. Kids, ages 2-14, are challenged to read or
+              be read to, 20 minutes a day. Those who complete the summer reading challenge
+              and submit their form receive fun prizes, including two tickets to a
+              Salt Lake Bees Game. The fun continues on game night as readers are greeted
+              at the gate with foam fingers and treats, making it a night to remember.  
+
     - @activities.each do |activity|
       .container-fluid
         .row
@@ -28,6 +45,6 @@
           .container-fluid
             %p
               = activity.description
-            = render partial: "activate", locals: { activity: activity }  
+            = render partial: "activate", locals: { activity: activity }
           %br
           %br
