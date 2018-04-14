@@ -1,1 +1,22 @@
-Im a new attached pdfs
+.container-fluid.dosis-font.schedule-container
+  .container-fuid
+    %h1.nav-links-header{style: 'text-align: center;'} UPLOAD PDF
+    %br
+    %br
+    %br
+
+
+.container-fluid.dosis-font.col-md-6.col-md-offset-3
+  = form_for [@activity, @pdf] do |f|
+    .form-group
+      %p
+        = f.label :name
+        %br
+        = f.text_field :name, class: 'form-control', required: true
+
+      = f.label :pdf
+      %br
+      = f.file_field :pdf, class: 'form-control-file'
+      %br
+
+      = f.submit "SAVE", class: 'btn btn-primary'

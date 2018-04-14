@@ -20,8 +20,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = Activity.create(activity_params)
+    @activity = Activity.new(activity_params)
     if @activity.save
+      if params[:banner]
+        BannerService.new(@activity, params[:banner]).run
+      end
       redirect_to activities_path
     else
       flash[:danger] = "There was a problem saving the event"
@@ -35,7 +38,11 @@ class ActivitiesController < ApplicationController
 
   def update
     @activity = Activity.find(params[:id])
+
     if @activity.update(activity_params)
+      if params[:banner]
+        BannerService.new(@activity, params[:banner]).run
+      end
       redirect_to activities_path
     else
       render :edit

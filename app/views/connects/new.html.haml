@@ -1,25 +1,29 @@
-= form_for @connect, html: { multipart: true } do |f|
-  .form-group
+.col-md-6
+  = form_for @connect, html: { multipart: true } do |f|
+    .form-group
 
-    %p
-      = f.label :month
-      %br
-      = f.select :month, options_for_select(Date::MONTHNAMES), class: "form-control"
+      %p
+        = f.label :month
+        %br
+        = f.select :month, options_for_select(Date::MONTHNAMES), {}, { class: "form-control" }
 
-    %p
-      = f.label :year
-      %br
-      = f.select :year, options_for_select(years_for_select), include_blank: true, class: "form-control"
+      %p
+        = f.label :year
+        %br
+        = f.select :year, options_for_select(years_for_select), {}, { include_blank: true, class: "form-control" }
 
-    %p
-      = f.label :early, "Early?"
-      %br
-      = f.select :early, options_for_select([['No', false], ['Yes', true]]), class: "form-control"
-    %hr
+      %p
+        = f.label :early, "Early?"
+        %br
+        = f.select :early, options_for_select([['No', false], ['Yes', true]]), {}, class: "form-control"
+      %hr
 
-    %p
-      %label Attach PDF
-      = file_field_tag "pdf"
+      %p
+        %label Attach PDF
+        = file_field_tag "pdf", class: 'form-control-file'
+        %br
+        %br
+        		
 
-    %p
-      = f.submit "SAVE", class: 'btn btn-primary'
+      %p
+        = f.submit "SAVE", class: 'btn btn-primary'

@@ -4,7 +4,7 @@
       = story.synopsis
   %p
     = story.body
-  - if story.name
+  - if story.name.present?
     %p.col-md-offset-1
       = "- #{story.name}"
   - else

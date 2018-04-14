@@ -1,5 +1,5 @@
-= form_for @activity do |f|
-  .form-group
+= form_for @activity, html: { multipart: true } do |f|
+  .form-group.col-md-6.dosis-font
     %p
       = f.label :name
       %br
@@ -7,11 +7,11 @@
     %p
       = f.label :month
       %br
-      = f.select :month, months_for_select { |m| [ m[0], m[1] ] }, class: 'form-control', required: true
+      = f.select :month, months_for_select { |m| [ m[0], m[1] ] }, {}, { class: 'form-control', required: true }
     %p
       = f.label :date
       %br
-      = f.select :date, (1..31).to_a, include_blank: true, class: 'form-control', required: true
+      = f.select :date, (1..31).to_a, { include_blank: true }, { class: 'form-control', required: true }
     %p
       = f.label :description
       %br
@@ -20,6 +20,12 @@
       = f.label :url, "Youtube URL"
       %br
       = f.text_field :url, class: 'form-control'
+      %br
+    %hr
+    %label Banner Image
+    = file_field_tag "banner"
+    %br
+
 
     %p
       = f.submit "SAVE", class: 'btn btn-primary'

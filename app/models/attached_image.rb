@@ -4,4 +4,5 @@ class AttachedImage < ApplicationRecord
                     path: "./public/images/#{Rails.env}/:id/:filename",
                     url:  "/images/#{Rails.env}/:id/:filename"
   do_not_validate_attachment_file_type :image
+  validates :image, attachment_presence: true
 end

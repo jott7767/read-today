@@ -4,4 +4,6 @@ class AttachedPdf < ApplicationRecord
                     path: "./public/documents/#{Rails.env}/pdf/:id/:filename",
                     url:  "/documents/#{Rails.env}/pdf/:id/:filename"
   do_not_validate_attachment_file_type :pdf
+
+  validates :pdf, attachment_presence: true
 end
