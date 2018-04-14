@@ -37,6 +37,10 @@ module ActivitiesHelper
     %w(April May June July August).include?(Date::MONTHNAMES[Date.today.month])
   end
 
+  def permit_summer_reading_submission
+    %w(June July).include?(Date::MONTHNAMES[Date.today.month])
+  end
+
   private
 
   def clickable_months

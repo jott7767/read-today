@@ -14,7 +14,10 @@ Rails.application.routes.draw do
 
   resources :shared_stories
 
-  resources :activities
+  resources :activities do
+    resources :attached_pdfs, only: [:new, :create, :destroy]
+    resources :attached_images, only: [:new, :create, :destroy]
+  end
 
   devise_for :users
 

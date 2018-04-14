@@ -2,7 +2,7 @@
   .container-fuid
     %h1.nav-links-header SUMMER READING EVENT
   .container-fluid
-    %p.dosis-font
+    %p.dosis-bold
       This summer reading program, presented by Read Today, Deseret News and KSL,
       in partnership with McDonalds and the Governor’s Office, begins in June and
       runs through the summer. Kids, ages 2-14, are challenged to read or be read to,
@@ -20,13 +20,30 @@
         %p For every 20 minutes you read, color in a baseball on the game board
       %li
         %p For each base you pass you earn a prize!
-    %h3.blue-h4 How to collect your prizes
+    %h3.blue-h4 How to collect your prizes:
     %ul
       %li
         %p Take a picture or scan your completed game board
       %li
-        %p Fill out the household information (all information is kept private and will not be used for marking purposes).
+        %p
+          When June starts come back to this page, click the 'Submit Gameboards' button and fill out the household information
+          %br
+          %span{style: "font-size:12px"}
+            (all information is kept private and will not be used for marking purposes).
       %li
         %p Add each participating child and attach an image of their completed game board.
       %li
         %p Each child who completes the Summer Reading Program will receive prizes earned, plus 2 tickets to the Read with the Bees Night at the ballpark
+    %h3.blue-h4 Please note:
+    %ul
+      %li All prizes and tickets will be mailed to the address provided.
+      %li Prizes subject to availability.
+      %li Deadline for submissions is July 31st.
+      %li No late submissions will be accepted.
+      %li Ages 5-14 may participate.
+      %br
+
+  - if permit_summer_reading_submission || admin_signed_in?
+    = link_to "Submit Gameboards", "#", class: 'btn btn-primary'
+    %br
+    %br

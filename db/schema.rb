@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323051941) do
+ActiveRecord::Schema.define(version: 20180414061537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(version: 20180323051941) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "active", default: true
+    t.string "date"
+    t.string "url"
+  end
+
+  create_table "attached_images", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "owner_type"
+    t.bigint "owner_id"
+    t.index ["owner_type", "owner_id"], name: "index_attached_images_on_owner_type_and_owner_id"
   end
 
   create_table "attached_pdfs", force: :cascade do |t|
@@ -33,13 +47,37 @@ ActiveRecord::Schema.define(version: 20180323051941) do
     t.datetime "pdf_updated_at"
     t.string "owner_type"
     t.bigint "owner_id"
+    t.string "name"
     t.index ["owner_type", "owner_id"], name: "index_attached_pdfs_on_owner_type_and_owner_id"
+  end
+
+  create_table "banners", force: :cascade do |t|
+    t.bigint "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "connects", force: :cascade do |t|
     t.string "month"
     t.string "year"
     t.boolean "early"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "family_groups", force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "tickets_sent", default: false
+    t.boolean "able_to_attend", default: false
+    t.string "street", null: false
+    t.string "city", null: false
+    t.string "state_code", default: "UT"
+    t.string "zip", null: false
+    t.integer "children", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +96,14 @@ ActiveRecord::Schema.define(version: 20180323051941) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "readers", force: :cascade do |t|
+    t.string "name"
+    t.integer "grade"
+    t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

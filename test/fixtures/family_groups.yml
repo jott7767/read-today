@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  tickets_sent: false
+  able_to_attend: false
+  street: MyString
+  city: MyString
+  state_code: MyString
+  zip: MyString
+  children: 1
+
+two:
+  name: MyString
+  tickets_sent: false
+  able_to_attend: false
+  street: MyString
+  city: MyString
+  state_code: MyString
+  zip: MyString
+  children: 1

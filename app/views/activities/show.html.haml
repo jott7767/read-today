@@ -1,6 +1,19 @@
 .container-fluid.dosis-font
   %h1.nav-links-header{style: 'text-align: center;'}
     = @activity.name
-    = render partial: 'activate', locals: { activity: @activity }  
+    = render partial: 'activate', locals: { activity: @activity }
   %h4
     = @activity.description
+  - if @pdfs.any?
+    .container-fluid
+      .h3.green-h3 Additional Info
+  - if @images.any?
+    .container-fluid
+      here are some images
+  - if @activity.url
+    .container-fluid.col-m-8.col-m-offset-2
+      = render partial: "activity_youtube_card"
+.container-fluid.dosis-font
+  .row
+    = link_to "Add PDF", new_activity_attached_pdf_path(@activity) ,class:"btn btn-primary"
+    = link_to "Attach Image", new_activity_attached_image_path(@activity) ,class:"btn btn-primary"

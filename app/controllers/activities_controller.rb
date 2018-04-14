@@ -15,6 +15,8 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @pdfs     = @activity.attached_pdfs
+    @images   = @activity.attached_images
   end
 
   def create
@@ -49,6 +51,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :month, :description)
+    params.require(:activity).permit(:name, :month, :description, :date, :url)
   end
 end

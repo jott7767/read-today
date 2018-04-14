@@ -13,7 +13,7 @@
     %p
       = f.label :air_date
       %br
-      = f.date_field :air_date, class: 'form-control'
+      = f.text_field :air_date, class: 'form-control date-picker', "data-provide" => "datepicker"
 
     %p
       = f.label :video_url
@@ -22,3 +22,9 @@
 
     %p
       = f.submit 'SAVE STORY', class: 'btn btn-primary'
+
+
+:javascript
+  $(document).on('turbolinks:load', function() {
+    $('.date-picker').datepicker();
+  });

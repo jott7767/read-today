@@ -27,7 +27,7 @@
               be read to, 20 minutes a day. Those who complete the summer reading challenge
               and submit their form receive fun prizes, including two tickets to a
               Salt Lake Bees Game. The fun continues on game night as readers are greeted
-              at the gate with foam fingers and treats, making it a night to remember.  
+              at the gate with foam fingers and treats, making it a night to remember.
 
     - @activities.each do |activity|
       .container-fluid
@@ -39,7 +39,7 @@
               = activity.name
             %span -
             %span.green-h3
-              = translate_month(activity.month)
+              = "#{translate_month(activity.month)} #{activity.date.to_i.ordinalize}" 
             %br
 
           .container-fluid

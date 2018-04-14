@@ -3,17 +3,23 @@
     %p
       = f.label :name
       %br
-      = f.text_field :name, class: 'form-control'
-
+      = f.text_field :name, class: 'form-control', required: true
     %p
       = f.label :month
       %br
-      = f.select :month, months_for_select { |m| [ m[0], m[1] ] }, include_blank: true
-
+      = f.select :month, months_for_select { |m| [ m[0], m[1] ] }, class: 'form-control', required: true
+    %p
+      = f.label :date
+      %br
+      = f.select :date, (1..31).to_a, include_blank: true, class: 'form-control', required: true
     %p
       = f.label :description
       %br
-      = f.text_area :description, class: "form-control"
+      = f.text_area :description, class: "form-control", required: true
+    %p
+      = f.label :url, "Youtube URL"
+      %br
+      = f.text_field :url, class: 'form-control'
 
     %p
       = f.submit "SAVE", class: 'btn btn-primary'
