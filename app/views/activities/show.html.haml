@@ -29,9 +29,14 @@
       - if @images.any?
         .container-fluid
           %h4 here are some images
+          %br
           - @images.each do |image|
             .col-md-12
-              %img.img-responsive{ href: @image.image.url }
+              %img.img-responsive{ src: image.image.url }
+              %br
+
   - if @activity.url.present?
+    %hr.green-hr
+    %h3.blue-h4{ style:"text-align:center;" } And Check Out This Video!
     .container-fluid.col-md-8.col-md-offset-2
       = render partial: "activity_youtube_card"

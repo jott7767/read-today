@@ -39,12 +39,13 @@
               = activity.name
             %span -
             %span.green-h3
-              = "#{translate_month(activity.month)} #{activity.date.to_i.ordinalize}" 
+              = "#{translate_month(activity.month)} #{activity.date.to_i.ordinalize}"
             %br
 
           .container-fluid
             %p
               = activity.description
-            = render partial: "activate", locals: { activity: activity }
+            - if admin_signed_in?
+              = render partial: "activate", locals: { activity: activity }
           %br
           %br
