@@ -1,7 +1,7 @@
 .container-fluid
   .row.form-inline
     - if activity.active
-      = link_to "DEACTIVATE", toggle_activity_path(activity.id), class: "btn btn-primary white-text-link", data: { confirm: "Deactivate?" }
+      = link_to "DEACTIVATE", toggle_activity_path(activity.id), method: :post, class: "btn btn-primary white-text-link", data: { confirm: "Deactivate?" }
     - else
       %p
         (This event is currently inactive and will not show up to the public)
