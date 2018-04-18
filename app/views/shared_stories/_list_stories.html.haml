@@ -4,16 +4,17 @@
       = story.synopsis
   %p
     = story.body
-  - if story.name.present?
-    %p.col-md-offset-1
-      = "- #{story.name}"
-  - else
-    %p.col-md-offset-1 - Anonymous
-
-  - if story.phone
+  .row.col-md-12
+    - if story.name.present?
+      %p.col-md-offset-1.col-md-8
+        = "- #{story.name}"
+    - else
+      %p.col-md-offset-1.col-md-8 - Anonymous
+    = link_to 'TRASH', shared_story_path(story.id), method: :delete, class:'btn btn-primary pull-right col-md-3', data: { confirm: "Are you sure?" }
+  - if story.phone.present?
     %p
       = "Phone: #{story.phone}"
-  - if story.email
+  - if story.email.present?
     %p
       = "Email: #{story.email}"
   %hr.green-hr

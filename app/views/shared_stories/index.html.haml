@@ -9,7 +9,6 @@
         - @pending_stories.each do |story|
           = render partial: "list_stories", locals: { story: story }
           = link_to 'APPROVE', edit_shared_story_path(story, approved: 'true'), class: 'btn btn-primary', data: { confirm: "Are you sure?" }
-          = link_to 'TRASH', shared_story_path(story.id), method: :delete, class:'btn btn-primary', data: { confirm: "Are you sure?" }
           %hr
 
     .container-fluid.col-md-12

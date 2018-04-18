@@ -41,6 +41,15 @@ module ActivitiesHelper
     %w(June July).include?(Date::MONTHNAMES[Date.today.month])
   end
 
+  def display_date(activity)
+    month = translate_month(activity.month)
+    if activity.date.present?
+      "#{month} #{activity.date.to_i.ordinalize}"
+    else
+      month
+    end
+  end
+
   private
 
   def clickable_months

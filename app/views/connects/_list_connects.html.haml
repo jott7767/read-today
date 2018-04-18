@@ -1,3 +1,6 @@
 - connects.each do |connect|
-  %h4.green-h3
-    = link_to "#{connect.display_name}", connect.attached_pdf.pdf.url, target: :blank
+  %span
+    -if connect.early
+      = link_to "#{connect.display_name}", connect.attached_pdf.pdf.url, target: :blank, class: "connect-link early-link"
+    - else
+      = link_to "#{connect.display_name}", connect.attached_pdf.pdf.url, target: :blank, class: "connect-link regular-link"

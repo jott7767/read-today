@@ -5,7 +5,7 @@
       %p
         = f.label :month
         %br
-        = f.select :month, options_for_select(Date::MONTHNAMES), {}, { class: "form-control" }
+        = f.select :month, months_for_select, {}, { class: "form-control" }
 
       %p
         = f.label :year
@@ -23,7 +23,7 @@
         = file_field_tag "pdf", class: 'form-control-file'
         %br
         %br
-        		
+
 
       %p
         = f.submit "SAVE", class: 'btn btn-primary'

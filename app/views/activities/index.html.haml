@@ -39,7 +39,7 @@
               = activity.name
             %span -
             %span.green-h3
-              = "#{translate_month(activity.month)} #{activity.date.to_i.ordinalize}"
+              = display_date(activity)
             %br
 
           .container-fluid

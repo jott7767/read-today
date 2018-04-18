@@ -1,3 +1,48 @@
 // Place all the styles related to the connects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.connect-headers {
+  color: white;
+  background-color: #0089ce;
+  text-align:center;
+  display:table-cell;
+  padding:10px;
+  font-size:20px;
+  border-radius: 10px;
+}
+
+.early-connect-header{
+  background-color: #819c1a;
+}
+
+.connect-body {
+  text-align: center;
+}
+
+.connect-link {
+  text-align:center;
+  display: table-cell;
+  padding: 20px;
+  font-size: 20px;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a.regular-link {
+  color: #819c1a;
+  &:hover {
+    color: #0089ce;
+  }
+}
+a.early-link {
+  color: #0089ce;
+  &:hover {
+    color: #819c1a;
+  }
+}
