@@ -5,7 +5,7 @@ class Connect < ApplicationRecord
   scope :late,  -> { where(early: false)}
 
   def display_name
-    month_name = Date::MONTHNAMES[self.month.to_i]
+    month_name = Date::MONTHNAMES[self.month]
     if early
       "#{month_name} #{year} Early Connect"
     else

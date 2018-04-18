@@ -2,8 +2,8 @@ class ConnectsController < ApplicationController
   access all:[:index], admin: :all
 
   def index
-    @connects       = Connect.late.order("year DESC, month ASC")
-    @early_connects = Connect.early.order("year DESC, month ASC")
+    @connects       = Connect.late.order("year DESC, month DESC")
+    @early_connects = Connect.early.order("year DESC, month DESC")
   end
 
   def new

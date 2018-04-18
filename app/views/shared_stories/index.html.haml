@@ -14,6 +14,7 @@
     .container-fluid.col-md-12
       - @approved_stories.each do |story|
         = render partial: "list_stories", locals: { story: story }
+        
   .container.col-md-9
     %br
     %button.btn.btn-primary#share-story-button SHARE YOUR STORY
