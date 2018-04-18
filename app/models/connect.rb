@@ -3,7 +3,9 @@ class Connect < ApplicationRecord
   # accepts_nested_attributes_for :attached_pdf
   scope :early, -> { where(early: true) }
   scope :late,  -> { where(early: false)}
+  
   def display_name
+    month_name = Date::MONTHNAMES[self.month]
     if early
       "#{month} #{year} Early Connect"
     else
