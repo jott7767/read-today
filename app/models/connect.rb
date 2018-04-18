@@ -7,9 +7,9 @@ class Connect < ApplicationRecord
   def display_name
     month_name = Date::MONTHNAMES[self.month.to_i]
     if early
-      "#{month} #{year} Early Connect"
+      "#{month_name} #{year} Early Connect"
     else
-      "#{month} #{year} 123 Connect"
+      "#{month_name} #{year} 123 Connect"
     end
   end
 end
