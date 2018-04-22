@@ -1,7 +1,7 @@
 .container-fluid.dosis-font
   .container.col-md-12
     %h1.nav-links-header{style: 'text-align: center;'}
-      = @activity.name
+      = @activity.name.upcase
       - if admin_signed_in?
         = render partial: 'activate', locals: { activity: @activity }
         = link_to "ADD PDF", new_activity_attached_pdf_path(@activity) ,class:"btn btn-primary"
@@ -22,21 +22,22 @@
               - @pdfs.each do |pdf|
                 %a{ href: "#{pdf.pdf.url}", target: :blank, style: "text-decoration:none;" }
                   %span.blue-h4
-                    = pdf.name
+                    = "#{pdf.name}"
+                    &nbsp
         %br
         %br
-    .col-md-3
-      - if @images.any?
-        .container-fluid
-          %h4 here are some images
-          %br
-          - @images.each do |image|
-            .col-md-12
-              %img.img-responsive{ src: image.image.url }
-              %br
-
   - if @activity.url.present?
     %hr.green-hr
     %h3.blue-h4{ style:"text-align:center;" } And Check Out This Video!
     .container-fluid.col-md-8.col-md-offset-2
       = render partial: "activity_youtube_card"
+
+  .col-md-12
+    %hr.green-hr
+    - if @images.any?
+      .container-fluid.pre-scrollable
+        - @images.each do |image|
+          %a{href: image.image.url, target: :blank}
+            .col-md-4.image-boxes
+              %img.img-responsive{ src: image.image.url }
+              %br

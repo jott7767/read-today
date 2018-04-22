@@ -10,12 +10,13 @@
         = "- #{story.name}"
     - else
       %p.col-md-offset-1.col-md-8 - Anonymous
-    = link_to 'TRASH', shared_story_path(story.id), method: :delete, class:'btn btn-primary pull-right col-md-3', data: { confirm: "Are you sure?" }
+    - if admin_signed_in?
+      = link_to 'TRASH', shared_story_path(story.id), method: :delete, class:'btn btn-primary pull-right col-md-3', data: { confirm: "Are you sure?" }
   - if story.phone.present?
     %p
       = "Phone: #{story.phone}"
   - if story.email.present?
     %p
       = "Email: #{story.email}"
-  %br	    
+  %br
   %hr.green-hr

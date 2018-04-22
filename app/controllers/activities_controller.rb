@@ -25,7 +25,7 @@ class ActivitiesController < ApplicationController
       if params[:banner]
         BannerService.new(@activity, params[:banner]).run
       end
-      redirect_to activities_path
+      redirect_to activity_path(@activity)
     else
       flash[:danger] = "There was a problem saving the event"
       render :new
@@ -43,7 +43,7 @@ class ActivitiesController < ApplicationController
       if params[:banner]
         BannerService.new(@activity, params[:banner]).run
       end
-      redirect_to activities_path
+      redirect_to activity_path(@activity)
     else
       render :edit
     end

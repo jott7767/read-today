@@ -33,10 +33,7 @@
       .container-fluid
         .row
           %h3
-            - if viewable?(activity.month)
-              = link_to activity.name, activity_path(activity), class: "h3-link"
-            - else
-              = activity.name
+            = link_to activity.name, activity_path(activity), class: "h3-link"
             %span -
             %span.green-h3
               = display_date(activity)

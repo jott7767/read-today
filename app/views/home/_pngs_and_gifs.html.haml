@@ -38,6 +38,8 @@
     .container.word-bubble.col-md-3.col-xl-1
       .word-bubble-container
         .words-container
-          %p.word-bubble-words hello there
+          %p.word-bubble-words
+            = link_to "Free, easy-to-use learning tips for children 5 and under", "https://www.vroom.org", target: :blank
+
   .container-fluid.footer-pictures.col-sm-12.col-lg-11.col-md-offset-1.col-xl-offset-2
     %img{src: "/images/read-today-gif-loop.gif"}
