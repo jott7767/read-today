@@ -29,6 +29,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
+  config.serve_static_assets = true
 
   # config.paperclip_defaults = {
   #   storage: :s3,
@@ -44,8 +45,8 @@ Rails.application.configure do
     address:             "smtp.gmail.com",
     port:                587,
     domain:              "www.readtoday.com",
-    user_name: "hottjw@gmail.com",
-    password: "gtuh hanz skkw lvxo",
+    user_name:           ENV['GMAIL_USERNAME'],
+    password:            ENV['GMAIL_PASSWORD'],
     authentication:      'plain',
     enabl_starttls_auto: true
   }
