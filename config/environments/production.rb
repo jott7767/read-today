@@ -45,8 +45,8 @@ Rails.application.configure do
     address:             "smtp.gmail.com",
     port:                587,
     domain:              "www.readtoday.com",
-    user_name:           ENV['GMAIL_USERNAME'],
-    password:            ENV['GMAIL_PASSWORD'],
+    user_name:           Rails.application.secrets.gmail_username,
+    password:            Rails.application.secrets.gmail_password,
     authentication:      'plain',
     enabl_starttls_auto: true
   }
