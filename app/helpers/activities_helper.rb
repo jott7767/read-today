@@ -50,6 +50,10 @@ module ActivitiesHelper
     end
   end
 
+  def embed_video?(url)
+    url.include?('youtu.be') || url.include?('youtube')
+  end
+
   private
 
   def clickable_months

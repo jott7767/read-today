@@ -2,6 +2,7 @@ class ActivitiesController < ApplicationController
   access all: [:show, :index], admin: :all
 
   def index
+    ordered_activities = Activity.all
     if admin_signed_in?
       @activities = Activity.all.order("month ASC")
     else

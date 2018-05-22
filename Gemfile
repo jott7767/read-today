@@ -26,6 +26,7 @@ gem 'paperclip', '~> 5.2.1'
 gem 'aws-sdk', '< 3.0'
 gem 'font-awesome-rails'
 gem 'aws-sdk-s3', '~> 1'
+gem 'chronic'
 
 group :development, :test do
   gem 'pry-byebug', '~> 3.4', '>= 3.4.3'

@@ -3,7 +3,7 @@ class NewsController < ApplicationController
   before_action :find_story, except: [:index, :new, :create]
 
   def index
-    @news = NewsStory.all.order('created_at DESC').paginate(page: params[:page], per_page: 3)
+    @news = NewsStory.all.order('air_date DESC').paginate(page: params[:page], per_page: 3)
   end
 
   def show
@@ -40,7 +40,12 @@ class NewsController < ApplicationController
   private
 
   def news_params
-    params.require(:news_story).permit(:title, :body, :air_date, :embed_url, :user_id)
+    parameters = params.require(:news_story)
+    if parameters[:air_date].present?
+      parameters.merge!(air_date: Chronic.parse(parameters[:air_date]).to_date).permit(:title, :body, :air_date, :embed_url, :user_id)
+    else
+      parameters.permit(:title, :body, :air_date, :embed_url, :user_id)
+    end
   end
 
   def find_story
