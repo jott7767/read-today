@@ -4,7 +4,7 @@ class ContactUsMailer < ApplicationMailer
     @message = message
     @name    = name
     @email   = email
-    mail(to: 'michaelsonj@deseretmtg.com', subject: "Read Today Contact - #{@email}", reply_to: @email )
+    mail(to: 'michaelsonj@deseretmgt.com', subject: "Read Today Contact - #{@email}", reply_to: @email )
   end
 
 end
