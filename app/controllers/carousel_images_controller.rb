@@ -32,7 +32,6 @@ class CarouselImagesController < ApplicationController
   end
 
   def update
-    binding.pry
     @carousel_image = CarouselImage.find(params[:id])
     @carousel_image.toggle_active
     redirect_to carousel_images_path
