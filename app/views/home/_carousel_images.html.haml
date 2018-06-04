@@ -1,0 +1,14 @@
+- if @carousel_images.count > 1
+  .carousel.slide{ "data-ride" => "carousel" }
+    .carousel-inner{ role: "listbox" }
+      - @carousel_images.each_with_index do |image, index|
+        - if index == 0
+          .item.active
+            %img{ src: image.image.url }
+        - else
+          .item
+            %img{ src: image.image.url }
+- elsif @carousel_images.any?
+  %img.img-responsive{src: @carousel_images.first.image.url}
+- else
+  %img.img-responsive{src: '/images/Read-and-Feed.jpg'}

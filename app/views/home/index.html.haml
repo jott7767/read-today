@@ -1,8 +1,10 @@
 .container-fluid
   %br
   %br
-  %img.img-responsive{src: '/images/Read-and-Feed.jpg'}
+  = render partial: "carousel_images"
   %br
+  - if admin_signed_in?
+    = link_to "EDIT IMAGES", carousel_images_path, class: 'btn btn-primary'
   %br
 
 = render partial: 'home/pngs_and_gifs'

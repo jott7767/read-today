@@ -1,0 +1,33 @@
+.container-fluid.dosis-font.schedule-container
+  .container-fuid
+    %h1.nav-links-header{style: 'text-align: center;'} CAROUSEL IMAGES
+    %br
+    = link_to "ADD IMAGES", new_carousel_image_path, class: "btn btn-primary"
+    %br
+    %br
+  .container-fluid
+    - if @carousel_images.any?
+      %table.table.table-striped
+        %thead
+          %tr
+            %td
+              Image Name
+            %td
+              Active?
+            %td
+              Actions
+        %tbody
+          - @carousel_images.each do |image|
+            %tr
+              %td
+                = link_to "#{image.image_file_name}", carousel_image_path(image)
+              %td
+                = image.active
+              %td
+                - if image.active
+                  = link_to "DEACTIVATE", carousel_image_path(image), method: :patch, class: "btn btn-warning", data: { confirm: "Deactivate this image?"}
+                - else
+                  = link_to "ACTIVATE", carousel_image_path(image), method: :patch, class: "btn btn-success", data: { confirm: "Activate this image?"}
+                = link_to "DELETE", carousel_image_path(image), method: :delete, class: "btn btn-danger", data: { confirm: "Delete this image?"}
+    - else
+      %h1 You haven't added any images for the carousel yet

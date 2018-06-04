@@ -1,0 +1,25 @@
+.container-fluid.dosis-font.schedule-container
+  .container-fuid
+    %h1.nav-links-header{style: 'text-align: center;'} UPLOAD IMAGE
+    %br
+    %br
+    %br
+
+
+.container-fluid.dosis-font.col-md-6.col-md-offset-3
+  = form_for @carousel_image do |f|
+    .form-group
+
+      %h3
+        = f.label :image, "CHOOSE FILE", class: "green-h3"
+      %br
+      = f.file_field :image, class: 'form-control-file'
+      %br
+      = f.label :active, "Active?"
+      %br
+      = f.check_box :active
+      %br
+      %br
+
+
+      = f.submit "DONE", class: 'btn btn-primary'

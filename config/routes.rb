@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :connects
-
   resources :shared_stories
+  resources :carousel_images
 
   resources :activities do
     resources :attached_pdfs, only: [:new, :create, :destroy]
